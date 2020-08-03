@@ -1,5 +1,6 @@
 class BookArticlesController < ApplicationController
   before_action :set_book_article, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /book_articles
   # GET /book_articles.json
@@ -14,7 +15,7 @@ class BookArticlesController < ApplicationController
 
   # GET /book_articles/new
   def new
-    @book_article = BookArticle.new
+    @book_article = current_user.book_articles.build
   end
 
   # GET /book_articles/1/edit
@@ -24,7 +25,7 @@ class BookArticlesController < ApplicationController
   # POST /book_articles
   # POST /book_articles.json
   def create
-    @book_article = BookArticle.new(book_article_params)
+    @book_article = current_user.book_articles.build(book_article_params)
 
     respond_to do |format|
       if @book_article.save
