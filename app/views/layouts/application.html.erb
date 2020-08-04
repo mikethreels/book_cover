@@ -4,12 +4,54 @@
     <title>BookCover</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <nav>
+        <div class="nav_logo">
+          <a href="#"><%= image_tag("nav_logo.png", :alt => "logo", :class => "nav_logo_img")%></a>
+        </div>
+        <div class="nav_list_container">
+          <ul class="nav_list">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">WRITE AN ARTICLE</a></li>
+          </ul>
+        </div>
+        <div class="nav_login_container">
+          <ul class="nav_login">
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">REGISTER</a></li>
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
     <%= yield %>
-  </body>
+    </main>
+    <footer>
+      <div class="footer_logo">
+      <a href="#"><%= image_tag("footer_logo.png", :alt => "logo", :class => "footer_logo_img")%></a>
+      </div>
+      <div class="footer_rights_container">
+        <ul class="footer_rights">
+          <li class="orange_leaf">Privacy Policy</li>
+          <li class="orange_leaf">Terms & Conditions</li>
+          <li>Copyright. All rights reserved.</li>
+        </ul>
+      </div>
+      <div class="footer_social_container">
+        <ul class="footer_social">
+          <li>Connect with us:</li>
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+          <li><i class="fab fa-facebook-f"></i></li>
+        </ul>
+      </div>
+    </footer>
+    </body>
 </html>
