@@ -9,6 +9,11 @@ class BookArticle < ApplicationRecord
     def self.most_popular
         top_id = Vote.group(:book_article_id).count(:book_article_id).max_by { | _,v | v }[0]
         top_article = BookArticle.find(top_id)
-        
     end
+
+    def self.top_category(cat) 
+        category = Category.find(cat)
+        category.book_articles.order("created_at DESC").first
+    end
+
 end

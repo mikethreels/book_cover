@@ -159,6 +159,10 @@ acronym {
 
 /* application CSS */
 
+$main-color: #4E443E;
+$logo-color: #d57934;
+
+
 @font-face {
     font-family: "poppins-medium";
     font-display: swap;
@@ -174,7 +178,7 @@ body {
 nav {
     font-size: 1rem;
     display: grid;
-    color: #4E443E;
+    color: #7a706a;
     grid-template-columns: repeat(3, 1fr);
     height: 8vh;
     
@@ -191,8 +195,8 @@ main {
 footer {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    background-color: #4E443E;
-    height: 7vh;
+    background-color: $main-color;
+    height: 8vh;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -258,14 +262,14 @@ footer ul {
     margin-right: 5px;
     align-items: center;
     i {
-      color: #d57934;
+      color: $logo-color;
       font-size: 1.5rem;
       margin: 0 5px;
     }
 }
 
 .orange_leaf {
-    color: #d57934;
+    color: $logo-color;
 }
 
 .flex {

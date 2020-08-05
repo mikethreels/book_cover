@@ -1,7 +1,34 @@
 <p id="notice"><%= notice %></p>
-
+  <section class="homepage_section">
+    <div class="top_article">
+      <%= image_tag @top_article.image.url %>
+      <h1><%= @top_article.title %></h1>
+      <p><%= @top_article.text %></p>
+    </div>
+    <div class="category">
+      <%= image_tag @top_javascript.image.url %>
+      <h2>Javascript</h2>
+      <p><%=@top_javascript.title%></p>
+    </div>
+    <div class="category">
+      <%= image_tag @top_ruby.image.url %>
+      <h2>Ruby</h2>
+      <p><%=@top_ruby.title%></p>
+    </div>
+    <div class="category">
+      <%= image_tag @top_python.image.url %>
+      <h2>Python</h2>
+      <p><%=@top_python.title%></p>
+    </div>
+    <div class="category">
+      <%= image_tag @top_java.image.url %>
+      <h2>Java</h2>
+      <p><%=@top_java.title%></p>
+    </div>
+  </section>
+<%
+=begin %>
 <h1>Book Articles</h1>
-<p><%= image_tag @top_article.image.url %></p>
 <table>
   <thead>
     <tr>
@@ -24,6 +51,5 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Book Article', new_book_article_path %>
+<%
+=end %>

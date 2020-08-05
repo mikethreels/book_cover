@@ -7,6 +7,10 @@ class BookArticlesController < ApplicationController
   def index
     @book_articles = BookArticle.all
     @top_article = BookArticle.most_popular
+    @top_javascript = BookArticle.top_category(1)
+    @top_ruby = BookArticle.top_category(2)
+    @top_python = BookArticle.top_category(3)
+    @top_java = BookArticle.top_category(4)
   end
 
   # GET /book_articles/1
@@ -30,7 +34,7 @@ class BookArticlesController < ApplicationController
 
     respond_to do |format|
       if @book_article.save
-        format.html { redirect_to @book_article, notice: 'Book article was successfully created.' }
+        format.html { redirect_to book_articles_path, notice: 'Book article was successfully created.' }
         format.json { render :show, status: :created, location: @book_article }
       else
         format.html { render :new }
@@ -44,7 +48,7 @@ class BookArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @book_article.update(book_article_params)
-        format.html { redirect_to @book_article, notice: 'Book article was successfully updated.' }
+        format.html { redirect_to book_articles_path, notice: 'Book article was successfully updated.' }
         format.json { render :show, status: :ok, location: @book_article }
       else
         format.html { render :edit }
