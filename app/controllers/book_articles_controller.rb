@@ -6,6 +6,7 @@ class BookArticlesController < ApplicationController
   # GET /book_articles.json
   def index
     @book_articles = BookArticle.all
+    @top_article = BookArticle.most_popular
   end
 
   # GET /book_articles/1
@@ -70,6 +71,6 @@ class BookArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_article_params
-      params.require(:book_article).permit(:title, :body)
+      params.require(:book_article).permit(:title, :text)
     end
 end

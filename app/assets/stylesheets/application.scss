@@ -172,7 +172,7 @@ body {
 }
 
 nav {
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: grid;
     color: #4E443E;
     grid-template-columns: repeat(3, 1fr);
@@ -190,7 +190,7 @@ main {
 
 footer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
     background-color: #4E443E;
     height: 7vh;
     position: fixed;
@@ -206,6 +206,11 @@ footer {
 a { 
     color: inherit;
     text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+  background-color: inherit;
 }
 
 .nav_logo_img,
@@ -240,13 +245,23 @@ footer ul {
     grid-template-columns: 1fr 1fr;
 }
 
-.nav_login,
-.footer_rights {
+.nav_login {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.footer_rights {
+  grid-template-columns: 0.8fr 1fr 1.6fr;
+}
+
 .footer_social{
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
+    margin-right: 5px;
+    align-items: center;
+    i {
+      color: #d57934;
+      font-size: 1.5rem;
+      margin: 0 5px;
+    }
 }
 
 .orange_leaf {
