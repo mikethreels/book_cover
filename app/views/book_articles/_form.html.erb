@@ -1,4 +1,4 @@
-<%= form_with(model: book_article, local: true) do |form| %>
+<%= form_with(model: book_article, local: true, html: {multipart: true}) do |form| %>
   <% if book_article.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(book_article.errors.count, "error") %> prohibited this book_article from being saved:</h2>
@@ -20,6 +20,12 @@
     <%= form.label :text %>
     <%= form.text_area :text %>
   </div>
+
+  <p>
+  <%= form.label :image, "Attach an Image" %><br />
+  <%= form.file_field :image %>
+  </p>
+
 
   <div class="actions">
     <%= form.submit %>
