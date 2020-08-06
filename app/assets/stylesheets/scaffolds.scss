@@ -48,6 +48,8 @@ div {
 
 #notice {
   color: green;
+  position: absolute;
+  z-index: 1;
 }
 
 .field_with_errors {

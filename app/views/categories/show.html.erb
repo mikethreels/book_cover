@@ -1,4 +1,27 @@
 <p id="notice"><%= notice %></p>
 
+
+<section class="category_section">
+    <div class="category_article_container ">
+    <% counter = 0%>
+        <% @category.book_articles.each do |article|%>
+            <div class="category_image_container cic_<%=counter%>">
+                <%= image_tag article.image.url %>
+            </div>
+            <div class="category_article_info cac_<%=counter%>">
+                <h1><%= @category.name %></h1>
+                <h2><%= article.title %></h2>
+                <p><%= article.text%></p>
+            </div>
+            <% counter += 1%>
+        <% end %>
+    </div>
+</section>
+
+
+<%
+=begin %>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+<%
+=end %>

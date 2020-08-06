@@ -50,6 +50,9 @@ $main-color: #4E443E;
         text-decoration: underline;
         text-decoration-color: $main-color;
         text-decoration-thickness: 2px;
+        a {
+            color: inherit;
+        }
     }
     p {
         position: absolute;
@@ -59,3 +62,10 @@ $main-color: #4E443E;
         
     }
 }
+// .category:hover {
+//     float: left;
+//     bottom: 8vw;
+//     width: 30vw;
+//     height: 40vh;
+//     z-index: 2;
+// }

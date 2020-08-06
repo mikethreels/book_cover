@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
  html,
 body,
 div,
@@ -189,7 +191,7 @@ nav {
 }
 
 main {
-    background-color: lightgray;
+    
 }
 
 footer {

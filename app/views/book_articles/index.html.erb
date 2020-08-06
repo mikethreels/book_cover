@@ -5,24 +5,25 @@
       <h1><%= @top_article.title %></h1>
       <p><%= @top_article.text %></p>
     </div>
+    
     <div class="category">
       <%= image_tag @top_javascript.image.url %>
-      <h2>Javascript</h2>
+      <h2><%= link_to 'Javascript', category_path(@top_javascript.categories.ids[0]) %></h2>
       <p><%=@top_javascript.title%></p>
     </div>
     <div class="category">
       <%= image_tag @top_ruby.image.url %>
-      <h2>Ruby</h2>
+      <h2><%= link_to 'Ruby', category_path(@top_ruby.categories.ids[0]) %></h2>
       <p><%=@top_ruby.title%></p>
     </div>
     <div class="category">
       <%= image_tag @top_python.image.url %>
-      <h2>Python</h2>
+      <h2><%= link_to 'Python', category_path(@top_python.categories.ids[0]) %></h2>
       <p><%=@top_python.title%></p>
     </div>
     <div class="category">
       <%= image_tag @top_java.image.url %>
-      <h2>Java</h2>
+      <h2><%= link_to 'Java', category_path(@top_java.categories.ids[0]) %></h2>
       <p><%=@top_java.title%></p>
     </div>
   </section>

@@ -1,0 +1,58 @@
+$logo-color: #d57934;
+$main-color: #4E443E;
+.category_article_container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    height: 84vh;
+}
+
+
+.category_image_container {
+    max-height: 100%;
+    img {
+        width: 100%;
+        max-height: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+}
+
+.category_article_info {
+    h1 {
+        color: $logo-color;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    h2 {
+        color: black;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    p {
+        color: $main-color;
+    }
+}
+
+.cic_0,
+.cac_0,
+.cic_1,
+.cac_1 {
+    order: 1;
+}
+
+.cac_2 {
+    order: 2;
+}
+
+.cic_2 {
+    order: 3;
+}
+
+.cac_3 {
+    order: 4;
+}
+
+.cic_3 {
+    order: 5;
+}
