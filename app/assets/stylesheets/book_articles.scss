@@ -69,3 +69,53 @@ $main-color: #4E443E;
 //     height: 40vh;
 //     z-index: 2;
 // }
+
+.create_article_container {
+    height: 84vh;
+    form {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+.create_article_form {
+    background-color: $main-color;
+    height: 70vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        margin-bottom: 30px;
+    }
+    p {
+        margin: 20px 0;
+    }
+}
+
+.field {
+    width: 90%;
+    input,
+    textarea {
+        width: 90%;
+    }
+}
+
+.actions {
+    input {
+        height: 30px;
+        width: 190px;
+        border-radius: 10px;
+    }
+}
+
+.drop_down {
+    display: flex;
+    flex-direction: column;
+    select {
+        margin: 10px 0;
+    }
+}

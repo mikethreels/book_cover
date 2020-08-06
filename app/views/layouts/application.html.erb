@@ -23,8 +23,13 @@
         </div>
         <div class="nav_login_container">
           <ul class="nav_login">
-            <li><a href="#">LOGIN</a></li>
-            <li><a href="#">REGISTER</a></li>
+          <% unless user_signed_in? %>
+            <li><%= link_to 'LOGIN', user_session_path %></li>
+            <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
+          <% else %>
+            <li><%= current_user.name %></li>
+            <li><%= link_to 'SIGN OUT', destroy_user_session_path %></li>
+          <% end %>
             <li><a href="#"><i class="fas fa-search"></i></a></li>
           </ul>
         </div>

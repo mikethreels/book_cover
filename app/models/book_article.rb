@@ -16,4 +16,19 @@ class BookArticle < ApplicationRecord
         category.book_articles.order("created_at DESC").first
     end
 
+    def category_list
+        categories.join(", ")
+      end
+
+    def category_list
+        self.categories.collect do |tag|
+            category.name
+        end.join(", ")
+    end
+
+    def category_list=(categories_string)
+        category_names = categories_string.split(",").collect{|s| s.strip}.uniq
+        new_or_found_categories= category_names.collect { |name| Category.find_or_create_by(name: name) }
+        self.categories = new_or_found_categories
+    end     
 end
