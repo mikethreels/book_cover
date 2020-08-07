@@ -96,6 +96,14 @@ $main-color: #4E443E;
     }
 }
 
+.login_form {
+    height: 50vh;
+    min-height: 350px;
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
 .field {
     width: 90%;
     input,
@@ -117,5 +125,29 @@ $main-color: #4E443E;
     flex-direction: column;
     select {
         margin: 10px 0;
+    }
+}
+
+.view_article_section {
+    display: flex;
+    justify-content: center;
+}
+
+.view_article_container {
+    h1 {
+        font-size: 2rem;
+        color: $logo-color;
+        margin-bottom: 20px;
+    }
+    img {
+        max-width: 50vw;
+        max-height: 60vh;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    p {
+        max-width: 50vw;
     }
 }

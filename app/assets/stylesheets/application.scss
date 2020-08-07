@@ -177,6 +177,15 @@ body {
     font-family: "poppins-medium";
 }
 
+header {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
 nav {
     font-size: 1rem;
     display: grid;
@@ -192,6 +201,9 @@ nav {
 
 main {
     background-color: #F0FFF0;
+    position: relative;
+    top: 8vh;
+    padding-bottom: 8vh;
 }
 
 footer {
@@ -276,4 +288,8 @@ footer ul {
 
 .flex {
     display: flex;
+}
+
+a:visited{
+  color: $logo-color;
 }
