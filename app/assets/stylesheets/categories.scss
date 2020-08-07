@@ -3,7 +3,7 @@ $main-color: #4E443E;
 .category_article_container {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 42vh);
     height: 84vh;
 }
 
