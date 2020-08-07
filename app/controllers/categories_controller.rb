@@ -5,12 +5,14 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
+    @recent_articles = Category.most_recent(@category)
   end
 
   # GET /categories/new

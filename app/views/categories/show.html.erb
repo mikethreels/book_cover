@@ -4,7 +4,7 @@
 <section class="category_section">
     <div class="category_article_container ">
     <% counter = 0%>
-        <% @category.book_articles.each do |article|%>
+        <% @recent_articles.each do |article|%>
             <div class="category_image_container cic_<%=counter%>">
                 <%= image_tag article.image.url %>
             </div>
