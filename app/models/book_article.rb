@@ -5,7 +5,7 @@ class BookArticle < ApplicationRecord
     has_many :categories, through: :book_article_categories, dependent: :delete_all
     has_attached_file :image
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
-    validates :content, presence: true, length: { maximum: 2000,
+    validates :text, presence: true, length: { maximum: 2000,
                                                 too_long: '2000 characters in post is the maximum allowed.' }
 
     def self.most_popular
