@@ -5,10 +5,10 @@ RSpec.describe BookArticleCategory do
   let(:test_article) do
     test_user
     BookArticle.create(
-        title: 'New artcle title', 
-        text: 'New article text', 
-        user_id: test_user.id
-        ) 
+      title: 'New artcle title',
+      text: 'New article text',
+      user_id: test_user.id
+    )
   end
   let(:test_category) { Category.create(priority: 1, name: 'user_category') }
 

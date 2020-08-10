@@ -2,118 +2,63 @@ require 'rails_helper'
 
 # rspec spec/views/user_spec.rb
 RSpec.describe 'Main flow', type: :system do
-  let(:test_user) { User.create(name: 'Example User', email: 'test@email.com', password: 'password') }
-  let(:test_article) do
-    test_user
-    BookArticle.create(
-        title: 'New artcle title', 
-        text: 'New article text', 
-        user_id: test_user.id
-        ) 
-  end
-  let(:test_category) { Category.create(priority: 1, name: 'user_category') }
-  let(:test_article) do
-    test_user
-    test_category
-    BookArticle.create(
-        title: 'New artcle title', 
-        text: 'New article text', 
-        user_id: test_user.id
-        ) 
+  before(:each) do
+    FactoryBot.create(:user)
+    FactoryBot.create(:article1)
+    FactoryBot.create(:article2)
+    FactoryBot.create(:article3)
+    FactoryBot.create(:article4)
+    test_category1 = Category.create!(priority: 1, name: 'user_category1')
+    test_category2 = Category.create!(priority: 2, name: 'user_category2')
+    test_category3 = Category.create!(priority: 3, name: 'user_category3')
+    test_category4 = Category.create!(priority: 4, name: 'user_category4')
+    join = BookArticleCategory.create!(book_article_id: 1, category_id: test_category1.id)
+    join = BookArticleCategory.create!(book_article_id: 2, category_id: test_category2.id)
+    join = BookArticleCategory.create!(book_article_id: 3, category_id: test_category3.id)
+    join = BookArticleCategory.create!(book_article_id: 4, category_id: test_category4.id)
   end
   describe 'New user' do
     it 'User sign-up is correct' do
       # Access Home Page
-      visit('/')
-
+      visit root_url
+      # sleep 1
       # Go to Sign Up page
-      click_link('SIGN UP')
-
+      click_link('SIGN_UP')
       # Sign up
-      sleep 1
+      sleep 3
       fill_in('user[name]', with: 'Test')
-      fill_in('user[email]', with: 'test@email.com')
+      fill_in('user[email]', with: 'test@admin.com')
       fill_in('user[password]', with: 'password')
       fill_in('user[password_confirmation]', with: 'password')
-      sleep 1
+      # sleep 1
       click_button('Sign up')
-
-      # Logout
-      sleep 1
-      click_link('SIGN OUT')
+      # sleep 1
+      click_link('SIGN_OUT')
     end
   end
-  # describe 'Friend request' do
-  #   it 'path is correct' do
-  #     test_friend
-  #     test_user
+  describe 'Write an article' do
+    it 'path is correct' do
+      # Access Home Page
+      visit('/')
 
-  #     # Access Home Page
-  #     visit('/')
+      # Login as the user
+      click_link('LOGIN')
+      fill_in('user[email]', with: 'test@example.com')
+      fill_in('user[password]', with: 'password')
+      click_button('Log in')
 
-  #     # Login as the user
-  #     fill_in('user[email]', with: 'user@example.com')
-  #     fill_in('user[password]', with: 'password')
-  #     click_button('Log in')
-  #     sleep 1
-
-  #     # Go to all users page
-  #     sleep 1
-  #     click_link('All users')
-
-  #     # Request a new friend
-  #     sleep 1
-  #     click_button('invite')
-
-  #     # Logout
-  #     sleep 1
-  #     click_link('Sign out')
-
-  #     # Login as the friend
-  #     fill_in('user[email]', with: 'friend@example.com')
-  #     fill_in('user[password]', with: 'password')
-  #     click_button('Log in')
-  #     sleep 1
-
-  #     # Check my invitations
-  #     click_link('My invitations')
-  #     sleep 1
-  #     click_button('Accept')
-  #     sleep 1
-
-  #     # Logout friend
-  #     click_link('Sign out')
-  #   end
-  # end
-  # describe 'create post' do
-  #   it 'path is correct' do
-  #     test_user
-
-  #     # Access Home Page
-  #     visit('/')
-
-  #     # Login as the user
-  #     fill_in('user[email]', with: 'user@example.com')
-  #     fill_in('user[password]', with: 'password')
-  #     click_button('Log in')
-  #     sleep 1
-
-  #     # Create a post
-  #     fill_in('post[content]', with: 'this is an example post')
-  #     sleep 1
-  #     click_button('Save')
-
-  #     # Comment on the post
-  #     fill_in('comment[content]', with: 'this is an example comment')
-  #     sleep 1
-  #     click_button('Comment')
-
-  #     # Like a post
-  #     click_link('Like!')
-  #     sleep 1
-
-  #     # Logout
-  #     click_link('Sign out')
-  #   end
-  # end
+      # Go to write article page
+      click_link('WRITE')
+      sleep 1
+      fill_in('book_article[title]', with: 'test title')
+      sleep 1
+      fill_in('book_article[text]', with: 'test text for test article')
+      sleep 1
+      find('#book_article_category_list').find(:xpath, 'option[1]').select_option
+      sleep 1
+      attach_file('Image', 'spec/files/images/yourtestimg.jpg')
+      click_button('Create Book article')
+      click_link('SIGN_OUT')
+    end
+  end
 end

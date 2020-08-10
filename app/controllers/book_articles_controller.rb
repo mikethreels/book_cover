@@ -1,6 +1,6 @@
 class BookArticlesController < ApplicationController
-  before_action :set_book_article, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_book_article, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
 
   # GET /book_articles
   # GET /book_articles.json
@@ -15,8 +15,7 @@ class BookArticlesController < ApplicationController
 
   # GET /book_articles/1
   # GET /book_articles/1.json
-  def show
-  end
+  def show; end
 
   # GET /book_articles/new
   def new
@@ -24,8 +23,7 @@ class BookArticlesController < ApplicationController
   end
 
   # GET /book_articles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /book_articles
   # POST /book_articles.json
@@ -68,13 +66,14 @@ class BookArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_book_article
-      @book_article = BookArticle.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def book_article_params
-      params.require(:book_article).permit(:title, :text, :image, :category_list)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_book_article
+    @book_article = BookArticle.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def book_article_params
+    params.require(:book_article).permit(:title, :text, :image, :category_list)
+  end
 end

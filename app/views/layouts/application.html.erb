@@ -17,18 +17,18 @@
         </div>
         <div class="nav_list_container">
           <ul class="nav_list">
-            <li><%= link_to 'HOME', book_articles_path %></li>
-            <li><%= link_to 'WRITE AN ARTICLE', new_book_article_path %></li>
+            <li><%= link_to 'HOME', book_articles_path, :id => "HOME" %></li>
+            <li><%= link_to 'WRITE AN ARTICLE', new_book_article_path, :id => "WRITE" %></li>
           </ul>
         </div>
         <div class="nav_login_container">
           <ul class="nav_login">
           <% unless user_signed_in? %>
-            <li><%= link_to 'LOGIN', user_session_path %></li>
-            <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
+            <li><%= link_to 'LOGIN', user_session_path, :id => "LOGIN" %></li>
+            <li><%= link_to 'SIGN UP', new_user_registration_path, :id => "SIGN_UP" %></li>
           <% else %>
             <li><%= current_user.name %></li>
-            <li><%= link_to 'SIGN OUT', destroy_user_session_path %></li>
+            <li><%= link_to 'SIGN OUT', destroy_user_session_path, :id => "SIGN_OUT" %></li>
           <% end %>
             <li><a href="#"><i class="fas fa-search"></i></a></li>
           </ul>

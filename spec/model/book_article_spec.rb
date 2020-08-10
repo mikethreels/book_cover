@@ -7,9 +7,9 @@ RSpec.describe BookArticle do
       title: 'New artcle title',
       text: 'New article text',
       user_id: test_user.id,
-      image_file_name: "example.jpg",
-      image_content_type: "image/jpg",
-      image_file_size: "8192",
+      image_file_name: 'example.jpg',
+      image_content_type: 'image/jpg',
+      image_file_size: '8192',
       image_updated_at: nil
     )
   end
