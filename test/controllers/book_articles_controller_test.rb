@@ -34,7 +34,8 @@ class BookArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update book_article' do
-    patch book_article_url(@book_article), params: { book_article: { body: @book_article.body, title: @book_article.title } }
+    patch book_article_url(@book_article),
+          params: { book_article: { body: @book_article.body, title: @book_article.title } }
     assert_redirected_to book_article_url(@book_article)
   end
 

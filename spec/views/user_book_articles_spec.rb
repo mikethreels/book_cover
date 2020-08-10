@@ -12,10 +12,10 @@ RSpec.describe 'Main flow', type: :system do
     test_category2 = Category.create!(priority: 2, name: 'user_category2')
     test_category3 = Category.create!(priority: 3, name: 'user_category3')
     test_category4 = Category.create!(priority: 4, name: 'user_category4')
-    join = BookArticleCategory.create!(book_article_id: 1, category_id: test_category1.id)
-    join = BookArticleCategory.create!(book_article_id: 2, category_id: test_category2.id)
-    join = BookArticleCategory.create!(book_article_id: 3, category_id: test_category3.id)
-    join = BookArticleCategory.create!(book_article_id: 4, category_id: test_category4.id)
+    BookArticleCategory.create!(book_article_id: 1, category_id: test_category1.id)
+    BookArticleCategory.create!(book_article_id: 2, category_id: test_category2.id)
+    BookArticleCategory.create!(book_article_id: 3, category_id: test_category3.id)
+    BookArticleCategory.create!(book_article_id: 4, category_id: test_category4.id)
   end
   describe 'New user' do
     it 'User sign-up is correct' do

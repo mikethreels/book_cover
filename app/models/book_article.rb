@@ -11,9 +11,9 @@ class BookArticle < ApplicationRecord
   def self.most_popular
     if Vote.any?
       top_id = Vote.group(:book_article_id).count(:book_article_id).max_by { |_, v| v }[0]
-      top_article = BookArticle.find(top_id)
+      BookArticle.find(top_id)
     else
-      top_article = BookArticle.first
+      BookArticle.first
     end
   end
 
@@ -27,14 +27,12 @@ class BookArticle < ApplicationRecord
     article_cat
   end
 
-  def category_list
-    categories.join(', ')
-    end
+  # def category_list
+  #   categories.join(', ')
+  # end
 
   def category_list
-    categories.collect do |category|
-      category.name
-    end.join(', ')
+    categories.collect(&:name).join(', ')
   end
 
   def category_list=(categories_string)

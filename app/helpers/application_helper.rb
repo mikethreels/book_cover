@@ -6,5 +6,5 @@ module ApplicationHelper
     else
       link_to('Like!', book_article_votes_path(book_article_id: book_article.id), method: :post)
     end
-    end
+  end
 end
