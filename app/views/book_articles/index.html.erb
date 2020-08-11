@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
+<% unless @top_article.nil? %>
   <section class="homepage_section">
+    
     <div class="top_article">
       <%= image_tag @top_article.image.url %>
       <h1><%= @top_article.title %></h1>
@@ -35,6 +37,7 @@
       </div>
     <% end %>
   </section>
+<% end %>
 <%
 =begin %>
 <h1>Book Articles</h1>
