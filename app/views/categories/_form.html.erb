@@ -10,6 +10,15 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :priority %>
+    <%= form.text_area :priority %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
