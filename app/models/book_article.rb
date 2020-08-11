@@ -20,10 +20,13 @@ class BookArticle < ApplicationRecord
   def self.top_category(cat)
     begin
       category = Category.find(cat)
-      article_cat = category.book_articles.order('created_at DESC').first
     rescue StandardError
-      article_cat = BookArticle.first
+      return BookArticle.first
     end
+    unless category.book_articles.any?
+      return BookArticle.first
+    end
+    article_cat = category.book_articles.order('created_at DESC').first
     article_cat
   end
 
