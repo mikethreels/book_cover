@@ -14,6 +14,7 @@
                     <div class="category_article_info cac_<%=row%>">
                         <h1><%= @category.name %></h1>
                         <h2><%= article.title %></h2>
+                        <p><%= article.user.name%></p><br>
                         <p><%= article.text%></p>
                         <% if user_signed_in? %>
                             <%= like_or_dislike_btn(article) %>

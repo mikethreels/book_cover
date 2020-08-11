@@ -23,9 +23,8 @@ class BookArticle < ApplicationRecord
     rescue StandardError
       return BookArticle.first
     end
-    unless category.book_articles.any?
-      return BookArticle.first
-    end
+    return BookArticle.first unless category.book_articles.any?
+
     article_cat = category.book_articles.order('created_at DESC').first
     article_cat
   end
