@@ -58,10 +58,14 @@ class BookArticlesController < ApplicationController
   # DELETE /book_articles/1
   # DELETE /book_articles/1.json
   def destroy
-    @book_article.destroy
     respond_to do |format|
-      format.html { redirect_to book_articles_url, notice: 'Book article was successfully destroyed.' }
-      format.json { head :no_content }
+      if @book_article.destroy
+        format.html { redirect_to book_articles_url, notice: 'Book article was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to book_articles_url, notice: 'You are not able to destroyed this article.' }
+        format.json { head :no_content }
+      end
     end
   end
 
