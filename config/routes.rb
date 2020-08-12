@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :book_articles do
-    resources :votes
+    resources :votes, only: [:create, :destroy]
   end
-  resources :categories
+  resources :categories, only: [:show]
 
   root 'book_articles#index'
 end
