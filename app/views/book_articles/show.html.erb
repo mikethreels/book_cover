@@ -5,9 +5,8 @@
     <%= link_to "Back", category_path(@book_article.categories.ids[0]) %>
     <% if user_signed_in? %>
         <%= like_or_dislike_btn(@book_article) %>
-        <% if @book_article.user.id == current_user.id %>
-            <%= link_to "Edit", edit_book_article_path(@book_article.id) %>
-        <% end %>  
+        <%= edit_button(@book_article.user.id) %>
+        <%= delete_button(@book_article.user.id) %>
     <% end %>
     <h1><%= @book_article.title %></h1>
     <%= image_tag @book_article.image.url %>
