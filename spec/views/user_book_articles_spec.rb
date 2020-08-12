@@ -21,18 +21,18 @@ RSpec.describe 'Main flow', type: :system do
     it 'User sign-up is correct' do
       # Access Home Page
       visit root_url
-      # sleep 1
+      sleep 5
       # Go to Sign Up page
       click_link('SIGN_UP')
       # Sign up
-      sleep 3
+      sleep 5
       fill_in('user[name]', with: 'Test')
       fill_in('user[email]', with: 'test@admin.com')
       fill_in('user[password]', with: 'password')
       fill_in('user[password_confirmation]', with: 'password')
-      # sleep 1
+      sleep 5
       click_button('Sign up')
-      # sleep 1
+      sleep 5
       click_link('SIGN_OUT')
     end
   end
@@ -40,16 +40,17 @@ RSpec.describe 'Main flow', type: :system do
     it 'path is correct' do
       # Access Home Page
       visit('/')
-
+      sleep 5
       # Login as the user
       click_link('LOGIN')
+      sleep 5
       fill_in('user[email]', with: 'test@example.com')
       fill_in('user[password]', with: 'password')
       click_button('Log in')
-
+      sleep 5
       # Go to write article page
       click_link('WRITE')
-      sleep 1
+      sleep 5
       fill_in('book_article[title]', with: 'test title')
       sleep 1
       fill_in('book_article[text]', with: 'test text for test article')
@@ -58,6 +59,7 @@ RSpec.describe 'Main flow', type: :system do
       sleep 1
       attach_file('Image', 'spec/files/images/yourtestimg.jpg')
       click_button('Create Book article')
+      sleep 5
       click_link('SIGN_OUT')
     end
   end

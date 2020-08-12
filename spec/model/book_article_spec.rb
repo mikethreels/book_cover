@@ -19,13 +19,23 @@ RSpec.describe BookArticle do
       expect(article).to be_valid
     end
 
-    it 'is not valid without text' do
+    it 'Is not valid without text' do
       article.text = nil
       expect(article).to_not be_valid
     end
 
     it 'Text cannot be longer than 2,000' do
       article.text = '0' * 2001
+      expect(article).to_not be_valid
+    end
+
+    it 'Is not valid without title' do
+      article.title = nil
+      expect(article).to_not be_valid
+    end
+
+    it 'Title cannot be longer than 50' do
+      article.title = '0' * 51
       expect(article).to_not be_valid
     end
   end
