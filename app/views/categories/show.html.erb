@@ -3,25 +3,24 @@
 
 <section class="category_section">
     <div class="category_article_container ">
-    <% counter = 0%>
-    <% row = 1%>
-    <% category_books = @category.book_articles.order("created_at DESC")%>
-            <% category_books.each do |article|%>
-                <div class="row_<%=row%>_<%=counter%> category_inner_container">        
-                    <div class="category_image_container cic_<%=row%>">
-                        <%= image_tag article.image.url %>
-                    </div>
-                    <div class="category_article_info cac_<%=row%>">
-                        <h1><%= @category.name %></h1>
-                        <h2><%= article.title %></h2>
-                        <p><%= article.user.name%></p><br>
-                        <p><%= article.text%></p>
-                        <% if user_signed_in? %>
-                            <%= like_or_dislike_btn(article) %>
-                        <% end %>
-                        <%= link_to 'Read More', book_article_path(article.id) %>
-                    </div>
+        <% counter = 0%>
+        <% row = 1%>
+        <% @category_articles.each do |article|%>
+            <div class="row_<%=row%>_<%=counter%> category_inner_container">        
+                <div class="category_image_container cic_<%=row%>">
+                    <%= image_tag article.image.url %>
                 </div>
+                <div class="category_article_info cac_<%=row%>">
+                    <h1><%= article.categories.pluck(:name)[0] %></h1>
+                    <h2><%= article.title %></h2>
+                    <p><%= article.user.name%></p><br>
+                    <p><%= article.text%></p>
+                    <% if user_signed_in? %>
+                        <%= like_or_dislike_btn(article) %>
+                    <% end %>
+                    <%= link_to 'Read More', book_article_path(article.id) %>
+                </div>
+            </div>
             <% counter += 1%>
             <% if counter == 2 && row == 1 %>
                 <% counter = 0 %>

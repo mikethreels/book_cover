@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @recent_articles = Category.most_recent(@category)
+    @category_articles = Category.catgory_articles(@category)
   end
 
   # GET /categories/new
