@@ -18,4 +18,11 @@ class VotesController < ApplicationController
       redirect_to request.referrer, alert: 'You cannot dislike post that you did not like before.'
     end
   end
+
+  private
+
+   # Only allow a list of trusted parameters through.
+   def book_article_params
+    params.require(:vote).permit(:id, :book_article_id)
+  end
 end
