@@ -38,30 +38,3 @@
     <% end %>
   </section>
 <% end %>
-<%
-=begin %>
-<h1>Book Articles</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @book_articles.each do |book_article| %>
-      <tr>
-        <td><%= book_article.title %></td>
-        <td><%= book_article.text %></td>
-        <td><%= link_to 'Show', book_article %></td>
-        <td><%= link_to 'Edit', edit_book_article_path(book_article) %></td>
-        <td><%= link_to 'Destroy', book_article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%
-=end %>

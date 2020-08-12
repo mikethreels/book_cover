@@ -23,6 +23,7 @@ $main-color: #4e443e;
 .category_article_info {
   width: 100%;
   padding: 15px;
+
   h1 {
     color: $logo-color;
     font-size: 2rem;
@@ -38,11 +39,11 @@ $main-color: #4e443e;
   p {
     color: $main-color;
     display: -webkit-box;
-   -webkit-line-clamp: 3;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   padding-bottom: 1px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 1px;
   }
 
   a {

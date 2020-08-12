@@ -130,12 +130,15 @@ $main-color: #4e443e;
   flex-direction: column;
   align-items: center;
   color: $logo-color;
+
   img {
     margin-bottom: 30px;
   }
+
   label {
     margin: 5px 0;
   }
+
   p {
     margin: 20px 0;
   }
@@ -152,6 +155,7 @@ $main-color: #4e443e;
 
 .field {
   width: 90%;
+
   input,
   textarea {
     border-radius: 10px;

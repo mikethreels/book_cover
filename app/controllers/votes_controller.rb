@@ -21,8 +21,8 @@ class VotesController < ApplicationController
 
   private
 
-   # Only allow a list of trusted parameters through.
-   def book_article_params
+  # Only allow a list of trusted parameters through.
+  def book_article_params
     params.require(:vote).permit(:id, :book_article_id)
   end
 end
