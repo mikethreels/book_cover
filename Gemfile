@@ -39,6 +39,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'paperclip'
+gem 'cloudinary'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
