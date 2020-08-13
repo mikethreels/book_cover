@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'webdrivers'
+  gem 'bullet'
 end
 
 group :development do
