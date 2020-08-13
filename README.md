@@ -13,7 +13,7 @@ This is a blog app with as theme programming books, you want to write about a pr
 ## Getting Started
 - Fork the repository and create a local one on your computer
 - Move to the repository inside the command line using `cd` and the path to the file
-- Run `bundle install` and `rails db:migrate`
+- Run `bundle install`, `rails db:migrate` and `rake db:seed` in that order
 - Run `rails server` (in case you already have something running on port 3000 run `rails server -p 3001` where the number can be any port you want.)
 - inside your browser go to http://localhost:3000/, changing the port number in case you chose a custom one
 - explore the application
