@@ -1,0 +1,291 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+label,
+legend,
+p,
+blockquote,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: "poppins-medium", Arial, Helvetica, sans-serif;
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+:focus {
+  outline: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+}
+
+blockquote,
+q {
+  quotes: "" "";
+}
+
+abbr,
+acronym {
+  order: 0;
+}
+
+/* application CSS */
+
+$main-color: #4e443e;
+$logo-color: #d57934;
+
+@font-face {
+  font-family: "poppins-medium";
+  src: url('fonts/Poppins-Medium.ttf') format("truetype");
+  font-weight: 700;
+}
+
+header {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+nav {
+  font-size: 1rem;
+  display: grid;
+  color: #7a706a;
+  grid-template-columns: repeat(3, 1fr);
+  height: 8vh;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+main {
+  position: relative;
+  top: 8vh;
+  padding-bottom: 8vh;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: $main-color;
+  height: 8vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+  background-color: inherit;
+}
+
+.nav_logo_img,
+.footer_logo_img {
+  height: 7vh;
+  margin-left: 5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav ul,
+footer ul {
+  display: grid;
+
+  li {
+    text-align: center;
+  }
+}
+
+.nav_list_container,
+.footer_rights_container {
+  justify-content: center;
+}
+
+.nav_login_container,
+.footer_social_container {
+  justify-content: flex-end;
+}
+
+.nav_list {
+  grid-template-columns: 1fr 1fr;
+}
+
+.nav_login {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer_rights {
+  grid-template-columns: 0.8fr 1fr 1.6fr;
+}
+
+.footer_social {
+  grid-template-columns: repeat(4, auto);
+  margin-right: 5px;
+  align-items: center;
+
+  i {
+    color: $logo-color;
+    font-size: 1.5rem;
+    margin: 0 5px;
+  }
+}
+
+.orange_leaf {
+  color: $logo-color;
+}
+
+.flex {
+  display: flex;
+}
+
+a:visited {
+  color: $logo-color;
+}

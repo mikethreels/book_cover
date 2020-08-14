@@ -4,12 +4,59 @@
     <title>BookCover</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <nav>
+        <div class="nav_logo">
+          <a href="#"><%= image_tag("nav_logo.png", :alt => "logo", :class => "nav_logo_img")%></a>
+        </div>
+        <div class="nav_list_container">
+          <ul class="nav_list">
+            <li><%= link_to 'HOME', book_articles_path, :id => "HOME" %></li>
+            <li><%= link_to 'WRITE AN ARTICLE', new_book_article_path, :id => "WRITE" %></li>
+          </ul>
+        </div>
+        <div class="nav_login_container">
+          <ul class="nav_login">
+          <% unless user_signed_in? %>
+            <li><%= link_to 'LOGIN', user_session_path, :id => "LOGIN" %></li>
+            <li><%= link_to 'SIGN UP', new_user_registration_path, :id => "SIGN_UP" %></li>
+          <% else %>
+            <li><%= current_user.name %></li>
+            <li><%= link_to 'SIGN OUT', destroy_user_session_path, :id => "SIGN_OUT" %></li>
+          <% end %>
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
     <%= yield %>
-  </body>
+    </main>
+    <footer>
+      <div class="footer_logo">
+      <a href="#"><%= image_tag("footer_logo.png", :alt => "logo", :class => "footer_logo_img")%></a>
+      </div>
+      <div class="footer_rights_container">
+        <ul class="footer_rights">
+          <li class="orange_leaf"><a href="#">Privacy Policy</a></li>
+          <li class="orange_leaf"><a href="#">Terms & Conditions</a></li>
+          <li><p>Copyright. All rights reserved.</p></li>
+        </ul>
+      </div>
+      <div class="footer_social_container">
+        <ul class="footer_social flex">
+          <li><p>Connect with us:</p></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+    </body>
 </html>

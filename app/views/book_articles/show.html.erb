@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<section class="view_article_section">
+  <div class="view_article_container">
+    <%= link_to "Back", category_path(@book_article.categories.ids[0]) %>
+    <% if user_signed_in? %>
+        <%= like_or_dislike_btn(@book_article) %>
+        <%= edit_button(@book_article.user.id) %>
+        <%= delete_button(@book_article.user.id) %>
+    <% end %>
+    <h1><%= @book_article.title %></h1>
+    <%= image_tag @book_article.image.url %>
+    <p>
+      <%= @book_article.text %>
+    </p>
+  </div>
+</section>
+

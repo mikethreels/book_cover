@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+
+<section class="category_section">
+    <div class="category_article_container ">
+        <% counter = 0%>
+        <% row = 1%>
+        <% @category_articles.each do |article|%>
+            <div class="row_<%=row%>_<%=counter%> category_inner_container">        
+                <div class="category_image_container cic_<%=row%>">
+                    <%= image_tag article.image.url %>
+                </div>
+                <div class="category_article_info cac_<%=row%>">
+                    <h1><%= article.categories.first.name %></h1>
+                    <h2><%= article.title %></h2>
+                    <p><%= article.user.name%></p><br>
+                    <p><%= article.text%></p>
+                    <% if user_signed_in? %>
+                        <%= like_or_dislike_btn(article) %>
+                    <% end %>
+                    <%= link_to 'Read More', book_article_path(article) %>
+                </div>
+            </div>
+            <% counter += 1%>
+            <% if counter == 2 && row == 1 %>
+                <% counter = 0 %>
+                <% row = 2%>
+            <% elsif counter == 2 && row == 2 %>
+                <% counter = 0 %>
+                <% row = 1%>
+            <% end %>
+        <% end %>
+    </div>
+</section>

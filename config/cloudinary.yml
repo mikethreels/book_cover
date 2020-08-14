@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dinjkskli
+  api_key: '879365496116759'
+  api_secret: _BIglOfUCKJxVKPNS_GTcU-NXPE
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dinjkskli
+  api_key: '879365496116759'
+  api_secret: _BIglOfUCKJxVKPNS_GTcU-NXPE
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dinjkskli
+  api_key: '879365496116759'
+  api_secret: _BIglOfUCKJxVKPNS_GTcU-NXPE
+  enhance_image_tag: true
+  static_file_support: false
