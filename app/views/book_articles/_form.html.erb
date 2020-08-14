@@ -1,0 +1,42 @@
+<div class="create_article_container">
+  <%= form_with(model: book_article, local: true, html: {multipart: true}) do |form| %>
+    <div class="create_article_form">
+      <% if book_article.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(book_article.errors.count, "error") %> prohibited this book_article from being saved:</h2>
+
+          <ul>
+          <% book_article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+      <%= image_tag("footer_logo.png", :alt => "logo", :class => "nav_logo_img")%>
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+
+      <div class="field">
+        <%= form.label :text %>
+        <%= form.text_area :text %>
+      </div>
+
+      <div class="drop_down">
+      <%= collection_select(:book_article, :category_list, Category.all, :name, :name) %>
+      </div>
+
+      <p>
+      <%= form.label :image, "Attach an Image" %><br />
+      <%= form.file_field :image %>
+      </p>
+
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>

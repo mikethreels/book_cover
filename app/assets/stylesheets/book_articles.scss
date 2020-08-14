@@ -1,0 +1,195 @@
+// Place all the styles related to the BookArticles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$logo-color: #d57934;
+$main-color: #4e443e;
+
+.homepage_section {
+  height: 84vh;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
+}
+
+.top_article {
+  grid-column: 1/-1;
+  grid-row: 1/span 2;
+  position: relative;
+
+  img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  h1 {
+    position: absolute;
+    bottom: 9%;
+    left: 5%;
+    color: $logo-color;
+    font-size: 1.4rem;
+  }
+
+  p {
+    position: absolute;
+    bottom: 3%;
+    left: 4.5%;
+    color: #fff;
+  }
+}
+
+.view_article_container {
+  h1 {
+    font-size: 2rem;
+    color: $logo-color;
+    margin-bottom: 20px;
+  }
+
+  img {
+    max-width: 50vw;
+    max-height: 60vh;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  p {
+    max-width: 50vw;
+  }
+
+  a {
+    border: 1px solid #000;
+    padding: 4px;
+    margin: 20px;
+    border-radius: 10px;
+    color: $logo-color;
+    background-color: $main-color;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+  }
+}
+
+.category {
+  position: relative;
+
+  img {
+    width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    position: absolute;
+    top: 9%;
+    left: 5%;
+    color: $logo-color;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    text-decoration-color: $main-color;
+    text-decoration-thickness: 2px;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  p {
+    position: absolute;
+    bottom: 3%;
+    left: 4.5%;
+    color: #7a706a;
+  }
+}
+// .category:hover {
+//     float: left;
+//     bottom: 8vw;
+//     width: 30vw;
+//     height: 40vh;
+//     z-index: 2;
+// }
+
+.create_article_container {
+  height: 84vh;
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.create_article_form {
+  background-color: $main-color;
+  height: 70vh;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $logo-color;
+
+  img {
+    margin-bottom: 30px;
+  }
+
+  label {
+    margin: 5px 0;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+}
+
+.login_form {
+  height: 50vh;
+  min-height: 350px;
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.field {
+  width: 90%;
+
+  input,
+  textarea {
+    border-radius: 10px;
+    width: 90%;
+    padding-left: 8px;
+  }
+}
+
+.actions {
+  input {
+    height: 30px;
+    width: 190px;
+    border-radius: 10px;
+  }
+}
+
+.drop_down {
+  display: flex;
+  flex-direction: column;
+
+  select {
+    margin: 10px 0;
+  }
+}
+
+.view_article_section {
+  display: flex;
+  justify-content: center;
+}
+
+.remember_field {
+  display: flex;
+
+  input {
+    width: 100px;
+  }
+}
