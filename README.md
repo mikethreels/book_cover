@@ -1,6 +1,9 @@
 # Book Cover app with Ruby on Rails
 
 This is a blog app with as theme programming books, you want to write about a programming book or read about the best programming books, you can use this app.
+This Ruby on rails Capstone Project is based on an life style vlog. Following the desing of [liFEsTlye](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version) (by Nelson Sakwa).
+
+![screenshot](./app/assets/images/app-screenshot.png)
 
 ## Live Demo
 [Live Demo Link](https://young-ravine-05224.herokuapp.com/)
